@@ -1,0 +1,429 @@
+html{
+    box-sizing: border-box;/*que no nos afecte el pading en las imagenes y enlaces*/
+    font-size: 62.5%; /*Resetear para REMS - 62.5%=10PX DE 16PX*/
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+/*GLOBALES*/
+.contenedor{
+    width: 95%;
+    max-width: 120rem; /*Toma todo el espacio que quieres, pero no mas a 1200px de ancho*/
+    margin: 0 auto 0 auto;/*arriba 0, derecha auto, abajo 0, izquierda auto*/
+}
+h1{
+font-size: 3.8rem;
+}
+h2{
+font-size: 3.4rem;
+}
+h3{
+font-size: 3rem;
+}
+h4{
+font-size: 2.6rem;
+}
+/*Utilidades*/
+.seccion{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300{
+    font-weight: 300; /*utilizamos el font 300 que descargamos de google fonts*/
+}
+.centrar-texto{
+    text-align: center;
+
+}
+img{
+    max-width: 100%; /*Es para que nuestras imagenes sea responsive*/
+}
+
+.d-block{
+    display: block!important;/*para que coja todo el espacio, sin importar que tenga el inline-blok*/
+}
+
+.contenido-centrado{
+    max-width: 80rem;
+}
+/*BOTONES*/
+.boton {
+    color: #ffffff;
+    font-weight: 700; /*el grosor de la letra*/
+    text-decoration: none; /*   quitar las decoraciones, subrayado*/
+    font-size: 1.8rem; /*Tama;o de la letra*/
+    padding:1rem 3rem; /*tener un espaciado de en ambos lados*/
+    margin-top: 3rem; /*tener un margen de 3*/
+    display: inline-block; /*es necesario para que me funciones el margin-top*/
+    text-align: center;
+    border: none;
+    display: block;
+    flex: 0 0 100%;
+   } 
+   @media(min-width: 768px ){
+       .boton {
+           display: inline-block;
+           flex: 0 0 auto;
+       }
+       
+   }
+   .boton:hover{
+       cursor: pointer;
+   }
+
+   .boton-amarillo{
+   background-color: #E08709;
+   }
+   .boton-verde{
+   background-color: #71b100;
+   }
+
+/* HEADER*/
+.site-header{
+    background-color: #333333;
+}
+.site-header.inicio
+{
+    background-image:  url(../img/header.jpg);
+    background-position: center center; /*muestre la imagen desde el centro y expandelo*/
+    background-size: cover; /*que se adapte en tanto en altura y ancho deacuerdo a proporciones*/
+    height:100vh ; /*le pone la altura y el ancho deacuerdo a la pantalla quiere decir que se adapta*/
+    min-height: 60rem; /*para que que minimo tenga una altura de 600px */
+}
+
+.contenido-header
+{
+    height: 100%;/* es un hijo de header inicio asi que se adapta a todo lo que tengo en header inicio*/
+    display: flex; /* es para que sea felxible la barra con el h1 */
+    flex-direction: column; /*A ambos lo pongo en una columna*/
+    justify-content: space-between;
+    text-align: center;
+}
+@media(min-width: 768px){
+    .contenido-header {
+        text-align: left;
+    }
+}
+.contenido-header h1{
+    color: #ffffff;
+    padding-bottom:  2rem; /*Es separacion hacia dentro del elemnto */
+    max-width: 60rem; /*hace que se adapte a la medida que le doy y a 60 rem corta la liena y crea otro*/
+   line-height: 2; /*separamos las lineas, interlineado*/
+}
+.barra{ 
+    padding-top: 3rem; /*Es para que le de un espacio de 30px en la parte de arriba de la barra*/
+}
+@media(min-width:768px ){
+    .barra {
+    display: flex; /*Para que los elementos de las barras sean flexibles a cualquier posicion*/
+    justify-content: space-between; /*Un espacio entre los dos Como tenemos dos elementos el space betwwen separa uno a la derecha y otro a la izquierda*/
+    align-items:center ;/*Queremos que nos alinie verticcalmente usamos el center para que lo haga perfectamente*/
+
+    }
+}
+/*Navegacion*/
+.navegacion a
+{
+    color: #ffffff; /*Color de la letras*/
+    text-decoration: none; /*Para quitarle el decorado que es la lineas*/
+    font-size: 2.2rem   px; /*font size le da un tama;o especifico a la letras de navegacion*/
+    margin-right: 20px; /*margin right es el espacio que se le da por cada palabra de navegacion*/
+    display: block; /*Es para ie todos los enlaces esten en una linea*/
+    font-size:600 ;
+}
+@media(min-width: 768px){
+    .navegacion a {
+        display: inline-block;
+        font-size: 1.8rem;
+    }
+    .navegacion a :last-of-type {
+        margin:  0;
+    }
+}
+
+.navegacion a:hover{
+    color: yellowgreen;
+}
+
+
+/*ICONOS NOSOTROS*/
+@media(min-width: 768px ){
+    
+    .iconos-nosotros
+    {
+    display: flex; /* para que todos los iconos sean flexibles todos los hijos*/
+    justify-content: space-between; /*Separa los div de los iconos en partes iguales deja un espacio entre ellos*/
+    }
+}
+.icono
+{
+    text-align: center; /*aline todo de parte centrado*/
+}
+@media(min-width: 768px){
+    .icono {
+        flex-basis: cal(33.3% - 1rem);/*Separa en tres partes iguales los div con clases iconos*/
+    }
+}
+
+.icono h3
+{
+     text-transform: uppercase;/*Cambia a mayuscula y para minuscula lowercase*/
+}
+/*ANUNCIO*/
+@media(min-width: 768px){
+    .contenedor-anuncio{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;/*Es para que el contenido se posicione , si ya alcanzo su tama;o maximo de weight entoncess se coloque abajo*/
+    }
+}
+
+.anuncio {
+    flex-shrink:0;/*hace que no se encoja que siempre tome el tama;o de la base*/
+    border: 0.01rem solid  #b5b5b5; /*0.01 de ancho del border, solido porque quiero una linea recta y solida, y el color que esta en hexadecimal*/
+    background: #f5f5f5; /*pinta de color gris*/
+    margin-bottom:2rem ;
+    
+}
+
+@media(min-width: 768px){
+ .anuncio {
+    flex-basis: calc(33.3% - 1rem); /*Divide los hijos de anuncio en tres partes iguales*/
+
+ }
+}
+.contenido-anuncio{
+    padding: 2rem; /*aplica un pading a todas las direcciones*/
+}
+.contenido-anuncio h3 , .contenido-anuncio p{
+    margin: 0; /*para recortar el margin de h3 y p*/
+}
+.precio{
+    color: #71b100;
+    font-weight: 700; /*para hacerlo mas grueso*/
+}
+.ver-todas {
+    display: flex; /*para que nusetro elemnto se haga flexible*/
+    justify-content: flex-end; /*el elemnto lo voto al ultimo*/
+}
+/*Cotrato HOME*/
+.imagen-contacto{
+    background-image: url(../img/encuentra.jpg);
+    background-position:center center; /*para que aparesca centrada*/
+    background-size: cover;/*para que se adapte tanto a la medida que es el padre*/
+    height: 40rem;/*altura de 40 rem*/
+    display: flex; /**flexibilizar los paquetitos*/
+    align-items: center;
+}
+.contenido-contacto 
+{
+    flex: 0 0 95%; /*para que se adapte*/
+    color: #ffffff;
+
+}
+
+.iconos-caracteristicas{
+    list-style: none; /*quita los puntitos */
+    padding:0; /*borro el padding*/
+    display: flex;/*Hago que sea flexible los li.*/
+    justify-content: space-evenly; /*espacio para todos por igual pero solo en el medio*/
+    flex: 1;
+    max-width: 50rem;
+}   
+.iconos-caracteristicas li{
+    display: flex; /* para poner flexibles los que estan dentro de li que son los iconos y los p*/
+}
+.iconos-caracteristicas li img{
+    margin-right: 2rem;
+}
+/*SECCION INFERIOR*/
+@media(min-width: 768px){
+    
+    .seccion-inferior
+    {
+        display: flex; /*para que los hijos se pongan sencibles y se colocan mitad mitad*/
+        justify-content: space-between; /*ambos hijos se dan el mismo espacio*/
+    }
+    .seccion-inferior .blog{
+        flex-basis: 60%; /*blog va tomar un 60 porciento*/
+    }
+    .seccion-inferior .testimoniales{
+        flex-basis: calc(40% - 2rem) ;/*y los testimoniales 40%*/
+    }
+   
+}
+.entrada-blog{
+    margin-bottom: 2rem;
+}
+@media(min-width: 768px){
+    .entrada-blog {
+        display: flex; /*con este flex, la imagen con el texto-entrada se hacen flexibles*/
+        justify-content: space-between; /*le damos una separacion a ambos*/
+ 
+    }
+}
+.entrada-blog :last-of-type{
+    margin-bottom: 0; /*quitarle el margin al ultimo hijo que tiene como clase entrada-blog*/
+}
+
+@media(min-width:768px ){
+
+.entrada-blog .imagen 
+    {
+    flex-basis: 40%; /*la imagen hija de entrada-blog le esta dando un lugar o amor de 0%*/
+    }
+.entrada-blog .texto-entrada 
+    {
+        flex-basis: calc(60% - 3rem);/*el texto entrada hija de entrada blog,le esta dando una tama;o de 60-3rem*/
+    }
+}
+
+.texto-entrada a{
+    color: black;
+    text-decoration: none;
+}
+.texto-entrada h4{
+    margin: 0;
+    line-height: 1.4;/*la altura de cada lina a otra*/
+}
+
+.texto-entrada h4::after{ /*me va crear un elemento despues de h4, nose puede seleccionar ni es visible en inpeccionar*/
+content:'' ;/*no quiero que diga nada*/
+display: block; /*nos permite agregar un with con un hight*/
+width: 15rem;
+height: .5rem;
+background-color: #71b100;
+}
+.texto-entrada em{
+    color: #e08709;
+}
+.testimonial{
+    background-color: #71b100; /*fondo verde*/
+    color: #ffffff; /*color de letra blanco*/
+    font-size: 2.4rem; /*tama;o de letra*/
+    padding:2rem ; /*espaciado arriba, abajo, derecha, ixquerda*/
+    border-radius: 2rem;
+}
+.testimonial p{
+    text-align: right;
+}
+testimonial blockquote::before{
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;/*si el padre tiene relative, el hijo absolute eso sirve para poder colocarlo en un lugar en espe ifico*/
+    left: -2rem;
+    top: -1rem;
+}
+testimonial blockquote{
+    position: relative;/*es necesario ponerlo en el padre relative para poder usar el right, top, botton*/
+    padding-left: 5rem;
+    font-weight: 300;
+}
+/*SITE FOOTER*/
+.site-footer{
+background-color: #333333 ;
+margin: 0;
+}
+.site-footer nav {
+    display: none;
+
+}
+
+@media(min-width: 768px){
+    .site-footer nav {
+        display: block;
+    }
+}
+
+.contenedor-footer{
+    padding:3rem 0;
+    text-align: center;
+}
+@media(min-width: 768px){
+    .contenedor-footer 
+    {
+        display: flex;
+        justify-content: space-between;    
+    }
+    
+}
+.copyright{
+  color: #ffffff;
+    margin: 0;
+}
+/*INTERNAS*/
+.contenido-nosotros{
+ 
+    grid-column-gap:2rem ; /*tambien trabaja como margin, agrega separacion*/
+}
+@media(min-width: 768px){
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);/*se reparte un fraccion para los dos hijos*/
+    }
+}
+.texto-nosotros blockquote{
+   font-weight: 900;
+   margin: 0;
+   padding:1rem 0 3rem 0 ; 
+}
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*LABEL*/
+form p{
+    font-size: 1.4rem;
+    color: #333333;
+    margin:1rem 0 0 0 ;
+
+}
+legend{
+    font-size: 2rem;
+    color: #4f3f4f;
+}
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+
+}
+/*EDITANDO LOS INPUT PARA LOS FORMULARIOS*/
+input:not([type="submit"]),textarea,select
+{
+     padding-top: 1rem;
+    padding-bottom:1rem ;
+    display: block; /*para que no se mueva y se mantenga quieto*/
+    width: 100%;/*se le da el ancho maximo*/
+    background-color: #e3e3e3; /*Para pintar los textbox*/
+
+    margin-bottom:1rem;
+    border: none;
+    border-radius: 1rem;
+    
+}
+input [type="redio"]{
+width: auto;
+margin: 0;
+}
+
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+textarea{
+    height: 20rem;
+}
+.forma-contacto{
+    max-width: 30rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
